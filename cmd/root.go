@@ -39,8 +39,8 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "tbls-meta",
-	Short: "tbls-meta",
-	Long:  `tbls-meta.`,
+	Short: "tbls-meta is a CI-friendly tool for applying metadata managed by tbls to the datasource",
+	Long:  `tbls-meta is a CI-friendly tool for applying metadata managed by tbls to the datasource.`,
 }
 
 func Execute() {

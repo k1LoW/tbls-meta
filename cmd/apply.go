@@ -31,8 +31,8 @@ import (
 // applyCmd represents the apply command
 var applyCmd = &cobra.Command{
 	Use:   "apply",
-	Short: "apply",
-	Long:  `apply.`,
+	Short: "apply metadata (comments, description, labels) managed by tbls to the datasource",
+	Long:  `apply metadata (comments, description, labels) managed by tbls to the datasource.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		err := runApply(cmd, args)
 		if err != nil {

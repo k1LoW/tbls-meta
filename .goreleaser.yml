@@ -1,0 +1,70 @@
+before:
+  hooks:
+    - go mod download
+    - go mod tidy
+builds:
+-
+  id: tbls-meta-linux
+  env:
+    - CGO_ENABLED=0
+  goos:
+    - linux
+  ldflags:
+    - -s -w -X github.com/k1LoW/tbls-meta.version={{.Version}} -X github.com/k1LoW/tbls-meta.commit={{.FullCommit}} -X github.com/k1LoW/tbls-meta.date={{.Date}} -X github.com/k1LoW/tbls-meta/version.Version={{.Version}}
+-
+  id: tbls-meta-darwin
+  env:
+    - CGO_ENABLED=0
+  goos:
+    - darwin
+  ldflags:
+    - -s -w -X github.com/k1LoW/tbls-meta.version={{.Version}} -X github.com/k1LoW/tbls-meta.commit={{.FullCommit}} -X github.com/k1LoW/tbls-meta.date={{.Date}} -X github.com/k1LoW/tbls-meta/version.Version={{.Version}}
+archives:
+-
+  id: tbls-meta-archive
+  name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+  format_overrides:
+    - goos: darwin
+      format: zip
+  files:
+    - CREDITS
+    - README.md
+    - CHANGELOG.md
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Version }}-next"
+changelog:
+  skip: true
+brews:
+-
+  name: tbls-meta
+  github:
+    owner: k1LoW
+    name: homebrew-tap
+  commit_author:
+    name: k1LoW
+    email: k1lowxb@gmail.com
+  homepage: https://github.com/k1LoW/tbls-meta
+  description: tbls-meta is a CI-friendly tool for applying metadata managed by tbls to the datasource.
+  install: |
+    system './tbls-meta', 'completion', 'bash', '--out', 'tbls-meta.bash'
+    system './tbls-meta', 'completion', 'zsh', '--out', 'tbls-meta.zsh'
+    bin.install 'tbls-meta'
+    bash_completion.install 'tbls-meta.bash' => 'tbls-meta'
+    zsh_completion.install 'tbls-meta.zsh' => '_tbls-meta'
+nfpms:
+  -
+    id: tbls-meta-nfpms
+    file_name_template: "{{ .ProjectName }}_{{ .Version }}-1_{{ .Arch }}"
+    builds:
+    - tbls-meta-linux
+    homepage: https://github.com/k1LoW/tbls-meta
+    maintainer: Ken'ichiro Oyama <k1lowxb@gmail.com>
+    description: tbls-meta is a CI-friendly tool for applying metadata managed by tbls to the datasource.
+    license: MIT
+    formats:
+      - deb
+      - rpm
+    bindir: /usr/bin
+    epoch: 1

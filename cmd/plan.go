@@ -33,8 +33,8 @@ import (
 // planCmd represents the plan command
 var planCmd = &cobra.Command{
 	Use:   "plan",
-	Short: "plan",
-	Long:  `plan.`,
+	Short: "show the difference between metadata of the datasource and metadata managed by tbls",
+	Long:  `show the difference between metadata of the datasource and metadata managed by tbls.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		err := runPlan(cmd, args)
 		if err != nil {

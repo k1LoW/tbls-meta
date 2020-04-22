@@ -31,8 +31,8 @@ import (
 // versionCmd represents the version command
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Print tbls-meta version",
-	Long:  `Print tbls-meta version.`,
+	Short: "print tbls-meta version",
+	Long:  `print tbls-meta version.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(version.Version)
 	},

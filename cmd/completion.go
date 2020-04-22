@@ -33,8 +33,8 @@ var out string
 // completionCmd represents the completion command
 var completionCmd = &cobra.Command{
 	Use:   "completion",
-	Short: "Output shell completion code",
-	Long: `Output shell completion code.
+	Short: "output shell completion code",
+	Long: `output shell completion code.
 To configure your shell to load completions for each session
 
 # bash
