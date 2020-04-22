@@ -22,36 +22,87 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"context"
 	"fmt"
+	"net/url"
+	"os"
 
+	"github.com/k1LoW/tbls-meta/drivers"
+	"github.com/k1LoW/tbls-meta/drivers/bq"
+	"github.com/k1LoW/tbls/config"
+	"github.com/k1LoW/tbls/datasource"
+	"github.com/pkg/errors"
+	"github.com/pmezard/go-difflib/difflib"
 	"github.com/spf13/cobra"
 )
 
 // planCmd represents the plan command
 var planCmd = &cobra.Command{
 	Use:   "plan",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "plan",
+	Long:  `plan.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("plan called")
+		err := runPlan(cmd, args)
+		if err != nil {
+			cmd.Println(err)
+			os.Exit(1)
+		}
 	},
+}
+
+func runPlan(cmd *cobra.Command, args []string) error {
+	ctx := context.Background()
+	to, err := datasource.AnalyzeJSONString(os.Getenv("TBLS_SCHEMA"))
+	if err != nil {
+		return err
+	}
+	dsn := os.Getenv("TBLS_DSN")
+	u, err := url.Parse(dsn)
+	if err != nil {
+		return errors.WithStack(err)
+	}
+
+	var driver drivers.Driver
+
+	switch u.Scheme {
+	case "bq", "bigquery":
+		client, _, datasetID, err := datasource.NewBigqueryClient(ctx, dsn)
+		if err != nil {
+			return err
+		}
+		driver = bq.New(client, datasetID)
+	default:
+		return fmt.Errorf("unsupported driver '%s'", u.Scheme)
+	}
+	from, err := datasource.Analyze(config.DSN{
+		URL: dsn,
+	})
+	if err != nil {
+		return err
+	}
+	diffs, err := driver.Plan(ctx, from, to)
+	if err != nil {
+		return err
+	}
+
+	diff := "tbls meta plan:\n"
+	for _, df := range diffs {
+		d := difflib.UnifiedDiff{
+			A:        difflib.SplitLines(df.FromContent),
+			B:        difflib.SplitLines(df.ToContent),
+			FromFile: df.From,
+			ToFile:   df.To,
+			Context:  3,
+		}
+		text, _ := difflib.GetUnifiedDiffString(d)
+		if text != "" {
+			diff += text
+		}
+	}
+	fmt.Println(diff)
+	return nil
 }
 
 func init() {
 	rootCmd.AddCommand(planCmd)
-
-	// Here you will define your flags and configuration settings.
-
-	// Cobra supports Persistent Flags which will work for this command
-	// and all subcommands, e.g.:
-	// planCmd.PersistentFlags().String("foo", "", "A help for foo")
-
-	// Cobra supports local flags which will only run when this command
-	// is called directly, e.g.:
-	// planCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
