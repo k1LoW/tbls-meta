@@ -22,7 +22,8 @@ THE SOFTWARE.
 package cmd
 
 import (
-	"fmt"
+	"context"
+	"os"
 
 	"github.com/spf13/cobra"
 )
@@ -33,8 +34,24 @@ var applyCmd = &cobra.Command{
 	Short: "apply",
 	Long:  `apply.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("apply called")
+		err := runApply(cmd, args)
+		if err != nil {
+			cmd.Println(err)
+			os.Exit(1)
+		}
 	},
+}
+
+func runApply(cmd *cobra.Command, args []string) error {
+	ctx := context.Background()
+	from, to, driver, err := getSchemasAndDriver(ctx)
+	if err != nil {
+		return err
+	}
+	if err := driver.Apply(ctx, from, to); err != nil {
+		return err
+	}
+	return nil
 }
 
 func init() {

@@ -22,9 +22,17 @@ THE SOFTWARE.
 package cmd
 
 import (
+	"context"
 	"fmt"
+	"net/url"
 	"os"
 
+	"github.com/k1LoW/tbls-meta/drivers"
+	"github.com/k1LoW/tbls-meta/drivers/bq"
+	"github.com/k1LoW/tbls/config"
+	"github.com/k1LoW/tbls/datasource"
+	"github.com/k1LoW/tbls/schema"
+	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
 
@@ -40,6 +48,38 @@ func Execute() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+}
+
+func getSchemasAndDriver(ctx context.Context) (*schema.Schema, *schema.Schema, drivers.Driver, error) {
+	to, err := datasource.AnalyzeJSONString(os.Getenv("TBLS_SCHEMA"))
+	if err != nil {
+		return nil, nil, nil, err
+	}
+	dsn := os.Getenv("TBLS_DSN")
+	u, err := url.Parse(dsn)
+	if err != nil {
+		return nil, nil, nil, errors.WithStack(err)
+	}
+
+	var driver drivers.Driver
+
+	switch u.Scheme {
+	case "bq", "bigquery":
+		client, _, datasetID, err := datasource.NewBigqueryClient(ctx, dsn)
+		if err != nil {
+			return nil, nil, nil, err
+		}
+		driver = bq.New(client, datasetID)
+	default:
+		return nil, nil, nil, fmt.Errorf("unsupported driver '%s'", u.Scheme)
+	}
+	from, err := datasource.Analyze(config.DSN{
+		URL: dsn,
+	})
+	if err != nil {
+		return nil, nil, nil, err
+	}
+	return from, to, driver, nil
 }
 
 func init() {}
