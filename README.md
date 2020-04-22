@@ -4,6 +4,8 @@
 
 ## Usage
 
+tbls-meta is provided as an external subcommand of [tbls](https://github.com/k1LoW/tbls).
+
 ``` console
 $ tbls meta plan -c /path/to/tbls.yml
 ```
