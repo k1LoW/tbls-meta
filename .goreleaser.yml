@@ -47,6 +47,8 @@ brews:
     email: k1lowxb@gmail.com
   homepage: https://github.com/k1LoW/tbls-meta
   description: tbls-meta is a CI-friendly tool for applying metadata managed by tbls to the datasource.
+  dependencies:
+    - tbls
   install: |
     system './tbls-meta', 'completion', 'bash', '--out', 'tbls-meta.bash'
     system './tbls-meta', 'completion', 'zsh', '--out', 'tbls-meta.zsh'
@@ -66,5 +68,7 @@ nfpms:
     formats:
       - deb
       - rpm
+    dependencies:
+      - tbls
     bindir: /usr/bin
     epoch: 1
