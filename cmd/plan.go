@@ -38,7 +38,7 @@ var planCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		err := runPlan(cmd, args)
 		if err != nil {
-			cmd.Println(err)
+			cmd.PrintErrln(err)
 			os.Exit(1)
 		}
 	},

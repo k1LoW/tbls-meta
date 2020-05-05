@@ -36,7 +36,7 @@ var applyCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		err := runApply(cmd, args)
 		if err != nil {
-			cmd.Println(err)
+			cmd.PrintErrln(err)
 			os.Exit(1)
 		}
 	},
