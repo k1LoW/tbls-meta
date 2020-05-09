@@ -1,6 +1,6 @@
 # tbls-meta
 
-`tbls-meta` is a CI-friendly tool for applying metadata managed by [tbls](https://github.com/k1LoW/tbls) to the datasource.
+`tbls-meta` is an external subcommand of tbls for applying metadata managed by [tbls](https://github.com/k1LoW/tbls) to the datasource.
 
 ## Usage
 
