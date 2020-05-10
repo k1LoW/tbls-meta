@@ -1,4 +1,9 @@
-# tbls-meta
+<p align="center">
+<br>
+<img src="https://github.com/k1LoW/tbls-meta/raw/master/img/logo.png" width="200" alt="tbls-meta">
+<br>
+<br>
+</p>
 
 `tbls-meta` is an external subcommand of tbls for applying metadata managed by [tbls](https://github.com/k1LoW/tbls) to the datasource.
 
