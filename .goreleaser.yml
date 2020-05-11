@@ -46,7 +46,7 @@ brews:
     name: k1LoW
     email: k1lowxb@gmail.com
   homepage: https://github.com/k1LoW/tbls-meta
-  description: tbls-meta is a CI-friendly tool for applying metadata managed by tbls to the datasource.
+  description: tbls-meta is an external subcommand of tbls for applying metadata managed by tbls to the datasource.
   dependencies:
     - tbls
   install: |
@@ -63,7 +63,7 @@ nfpms:
     - tbls-meta-linux
     homepage: https://github.com/k1LoW/tbls-meta
     maintainer: Ken'ichiro Oyama <k1lowxb@gmail.com>
-    description: tbls-meta is a CI-friendly tool for applying metadata managed by tbls to the datasource.
+    description: tbls-meta is an external subcommand of tbls for applying metadata managed by tbls to the datasource.
     license: MIT
     formats:
       - deb
