@@ -51,7 +51,7 @@ func Execute() {
 }
 
 func getSchemasAndDriver(ctx context.Context) (*schema.Schema, *schema.Schema, drivers.Driver, error) {
-	to, err := datasource.AnalyzeJSONString(os.Getenv("TBLS_SCHEMA"))
+	to, err := datasource.AnalyzeJSONStringOrFile(os.Getenv("TBLS_SCHEMA"))
 	if err != nil {
 		return nil, nil, nil, err
 	}

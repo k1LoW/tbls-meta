@@ -16,7 +16,7 @@ $ tbls meta apply -c /path/to/tbls.yml
 
 ## Requirements
 
-- [tbls](https://github.com/k1LoW/tbls) > 1.35.0
+- [tbls](https://github.com/k1LoW/tbls) > 1.38.2
 
 ## Support Datasource
 
