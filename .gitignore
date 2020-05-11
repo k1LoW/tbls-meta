@@ -2,3 +2,4 @@
 dist/
 coverage.txt
 /tbls-meta
+*client_secrets.json*
