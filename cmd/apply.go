@@ -23,7 +23,6 @@ package cmd
 
 import (
 	"context"
-	"os"
 
 	"github.com/spf13/cobra"
 )
@@ -36,8 +35,7 @@ var applyCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		err := runApply(cmd, args)
 		if err != nil {
-			cmd.PrintErrln(err)
-			os.Exit(1)
+			printFatalln(cmd, err)
 		}
 	},
 }

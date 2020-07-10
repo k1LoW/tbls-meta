@@ -23,8 +23,6 @@ package cmd
 
 import (
 	"context"
-	"fmt"
-	"os"
 
 	"github.com/pmezard/go-difflib/difflib"
 	"github.com/spf13/cobra"
@@ -38,8 +36,7 @@ var planCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		err := runPlan(cmd, args)
 		if err != nil {
-			cmd.PrintErrln(err)
-			os.Exit(1)
+			printFatalln(cmd, err)
 		}
 	},
 }
@@ -69,7 +66,7 @@ func runPlan(cmd *cobra.Command, args []string) error {
 			diff += text
 		}
 	}
-	fmt.Println(diff)
+	cmd.Println(diff)
 	return nil
 }
 

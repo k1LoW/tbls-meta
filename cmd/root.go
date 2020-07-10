@@ -24,11 +24,14 @@ package cmd
 import (
 	"context"
 	"fmt"
+	"io/ioutil"
+	"log"
 	"net/url"
 	"os"
 
 	"github.com/k1LoW/tbls-meta/drivers"
 	"github.com/k1LoW/tbls-meta/drivers/bq"
+	"github.com/k1LoW/tbls-meta/version"
 	"github.com/k1LoW/tbls/config"
 	"github.com/k1LoW/tbls/datasource"
 	"github.com/k1LoW/tbls/schema"
@@ -44,10 +47,40 @@ var rootCmd = &cobra.Command{
 }
 
 func Execute() {
-	if err := rootCmd.Execute(); err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+	rootCmd.SetOut(os.Stdout)
+	rootCmd.SetErr(os.Stderr)
+
+	log.SetOutput(ioutil.Discard)
+	if env := os.Getenv("DEBUG"); env != "" {
+		debug, err := os.Create(fmt.Sprintf("%s.debug", version.Name))
+		if err != nil {
+			printFatalln(rootCmd, err)
+		}
+		log.SetOutput(debug)
 	}
+
+	if err := rootCmd.Execute(); err != nil {
+		printFatalln(rootCmd, err)
+	}
+}
+
+// https://github.com/spf13/cobra/pull/894
+func printErrln(c *cobra.Command, i ...interface{}) {
+	c.PrintErr(fmt.Sprintln(i...))
+}
+
+func printErrf(c *cobra.Command, format string, i ...interface{}) {
+	c.PrintErr(fmt.Sprintf(format, i...))
+}
+
+func printFatalln(c *cobra.Command, i ...interface{}) {
+	printErrln(c, i...)
+	os.Exit(1)
+}
+
+func printFatalf(c *cobra.Command, format string, i ...interface{}) {
+	printErrf(c, format, i...)
+	os.Exit(1)
 }
 
 func getSchemasAndDriver(ctx context.Context) (*schema.Schema, *schema.Schema, drivers.Driver, error) {
