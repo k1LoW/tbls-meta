@@ -190,8 +190,10 @@ func setColumnDescription(ts bigquery.Schema, name, fd, td string) error {
 		}
 		if strings.Contains(name, ".") && len(fs.Schema) > 0 {
 			splited := strings.SplitN(name, ".", 2)
-			if err := setColumnDescription(fs.Schema, splited[1], fd, td); err == nil {
-				return nil
+			if fs.Name == splited[0] {
+				if err := setColumnDescription(fs.Schema, splited[1], fd, td); err == nil {
+					return nil
+				}
 			}
 		}
 	}
