@@ -166,10 +166,8 @@ func (b *Bigquery) Apply(ctx context.Context, from, to *schema.Schema) error {
 			}
 			if td != fd {
 				fmt.Printf("Update: table.%s.%s.Description '%s' -> '%s'\n", tt.Name, name, fd, td)
-				for _, fs := range ts {
-					if fs.Name == name {
-						fs.Description = td
-					}
+				if err := setColumnDescription(ts, name, fd, td); err != nil {
+					return err
 				}
 			}
 		}
@@ -182,6 +180,22 @@ func (b *Bigquery) Apply(ctx context.Context, from, to *schema.Schema) error {
 	}
 
 	return nil
+}
+
+func setColumnDescription(ts bigquery.Schema, name, fd, td string) error {
+	for _, fs := range ts {
+		if fs.Name == name {
+			fs.Description = td
+			return nil
+		}
+		if strings.Contains(name, ".") && len(fs.Schema) > 0 {
+			splited := strings.SplitN(name, ".", 2)
+			if err := setColumnDescription(fs.Schema, splited[1], fd, td); err == nil {
+				return nil
+			}
+		}
+	}
+	return fmt.Errorf("not found column '%s'", name)
 }
 
 func diffLabels(from, to []string) ([]string, []string) {
