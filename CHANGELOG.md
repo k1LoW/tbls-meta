@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.2.2](https://github.com/k1LoW/tbls-meta/compare/v0.2.1...v0.2.2) (2020-11-27)
+
+* Fix #4 [#5](https://github.com/k1LoW/tbls-meta/pull/5) ([k1LoW](https://github.com/k1LoW))
+
 ## [v0.2.1](https://github.com/k1LoW/tbls-meta/compare/v0.2.0...v0.2.1) (2020-11-27)
 
 * Fix appling metadata to nested schema [#4](https://github.com/k1LoW/tbls-meta/pull/4) ([k1LoW](https://github.com/k1LoW))
