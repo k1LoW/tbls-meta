@@ -1,5 +1,5 @@
 .go-version
 dist/
-coverage.txt
+coverage.out
 /tbls-meta
 *client_secrets.json*
