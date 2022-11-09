@@ -23,11 +23,10 @@ $ tbls meta apply -c /path/to/tbls.yml
 
 **deb:**
 
-Use [dpkg-i-from-url](https://github.com/k1LoW/dpkg-i-from-url)
-
 ``` console
 $ export TBLS_META_VERSION=X.X.X
-$ curl -L https://git.io/dpkg-i-from-url | bash -s -- https://github.com/k1LoW/tbls-meta/releases/download/v$TBLS_META_VERSION/tbls-meta_$TBLS_META_VERSION-1_amd64.deb
+$ curl -o tbls-meta.deb -L https://github.com/k1LoW/tbls-meta/releases/download/v$TBLS_META_VERSION/tbls-meta_$TBLS_META_VERSION-1_amd64.deb
+$ dpkg -i tbls-meta.deb
 ```
 
 **RPM:**
