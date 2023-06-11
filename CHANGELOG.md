@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.2.3](https://github.com/k1LoW/tbls-meta/compare/v0.2.2...v0.2.3) - 2023-06-11
+### Other Changes
+- Use octocov by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/6
+- Bump golang.org/x/text from 0.3.7 to 0.3.8 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/7
+- Bump golang.org/x/crypto from 0.0.0-20211209193657-4570a0811e8b to 0.1.0 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/9
+- Bump golang.org/x/net from 0.0.0-20221012135044-0b7e1fb9d458 to 0.7.0 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/8
+- Setup tagpr by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/12
+
 ## [v0.2.2](https://github.com/k1LoW/tbls-meta/compare/v0.2.1...v0.2.2) (2020-11-27)
 
 * Fix #4 [#5](https://github.com/k1LoW/tbls-meta/pull/5) ([k1LoW](https://github.com/k1LoW))
@@ -21,4 +29,3 @@
 * Add dependencies [#1](https://github.com/k1LoW/tbls-meta/pull/1) ([k1LoW](https://github.com/k1LoW))
 
 ## [v0.1.0](https://github.com/k1LoW/tbls-meta/compare/81f287725c64...v0.1.0) (2020-04-22)
-
