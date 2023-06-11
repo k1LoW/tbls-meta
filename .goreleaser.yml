@@ -9,6 +9,9 @@ builds:
     - CGO_ENABLED=0
   goos:
     - linux
+  goarch:
+    - amd64
+    - arm64
   ldflags:
     - -s -w -X github.com/k1LoW/tbls-meta.version={{.Version}} -X github.com/k1LoW/tbls-meta.commit={{.FullCommit}} -X github.com/k1LoW/tbls-meta.date={{.Date}} -X github.com/k1LoW/tbls-meta/version.Version={{.Version}}
 -
@@ -17,6 +20,9 @@ builds:
     - CGO_ENABLED=0
   goos:
     - darwin
+  goarch:
+    - amd64
+    - arm64
   ldflags:
     - -s -w -X github.com/k1LoW/tbls-meta.version={{.Version}} -X github.com/k1LoW/tbls-meta.commit={{.FullCommit}} -X github.com/k1LoW/tbls-meta.date={{.Date}} -X github.com/k1LoW/tbls-meta/version.Version={{.Version}}
 archives:
@@ -27,34 +33,17 @@ archives:
     - goos: darwin
       format: zip
   files:
+    - LICENSE
     - CREDITS
     - README.md
     - CHANGELOG.md
+  rlcp: true
 checksum:
   name_template: 'checksums.txt'
 snapshot:
   name_template: "{{ .Version }}-next"
 changelog:
   skip: true
-brews:
--
-  name: tbls-meta
-  github:
-    owner: k1LoW
-    name: homebrew-tap
-  commit_author:
-    name: k1LoW
-    email: k1lowxb@gmail.com
-  homepage: https://github.com/k1LoW/tbls-meta
-  description: tbls-meta is an external subcommand of tbls for applying metadata managed by tbls to the datasource.
-  dependencies:
-    - tbls
-  install: |
-    system './tbls-meta', 'completion', 'bash', '--out', 'tbls-meta.bash'
-    system './tbls-meta', 'completion', 'zsh', '--out', 'tbls-meta.zsh'
-    bin.install 'tbls-meta'
-    bash_completion.install 'tbls-meta.bash' => 'tbls-meta'
-    zsh_completion.install 'tbls-meta.zsh' => '_tbls-meta'
 nfpms:
   -
     id: tbls-meta-nfpms
