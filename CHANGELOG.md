@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.3.0](https://github.com/k1LoW/tbls-meta/compare/v0.2.3...v0.3.0) - 2023-06-11
+### Other Changes
+- Update pkgs by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/11
+- Bump github.com/snowflakedb/gosnowflake from 1.6.5 to 1.6.19 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/10
+
 ## [v0.2.3](https://github.com/k1LoW/tbls-meta/compare/v0.2.2...v0.2.3) - 2023-06-11
 ### Other Changes
 - Use octocov by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/6
