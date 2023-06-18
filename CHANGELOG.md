@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.3.1](https://github.com/k1LoW/tbls-meta/compare/v0.3.0...v0.3.1) - 2023-06-18
+### Other Changes
+- Use completion by spf13/cobra by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/15
+
 ## [v0.3.0](https://github.com/k1LoW/tbls-meta/compare/v0.2.3...v0.3.0) - 2023-06-11
 ### Other Changes
 - Update pkgs by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/11
