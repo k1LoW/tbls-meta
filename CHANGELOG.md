@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.3.2](https://github.com/k1LoW/tbls-meta/compare/v0.3.1...v0.3.2) - 2023-10-12
+### Other Changes
+- Bump golang.org/x/net from 0.9.0 to 0.17.0 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/17
+
 ## [v0.3.1](https://github.com/k1LoW/tbls-meta/compare/v0.3.0...v0.3.1) - 2023-06-18
 ### Other Changes
 - Use completion by spf13/cobra by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/15
