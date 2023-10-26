@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.3.3](https://github.com/k1LoW/tbls-meta/compare/v0.3.2...v0.3.3) - 2023-10-26
+### Other Changes
+- Bump google.golang.org/grpc from 1.55.0 to 1.56.3 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/19
+
 ## [v0.3.2](https://github.com/k1LoW/tbls-meta/compare/v0.3.1...v0.3.2) - 2023-10-12
 ### Other Changes
 - Bump golang.org/x/net from 0.9.0 to 0.17.0 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/17
