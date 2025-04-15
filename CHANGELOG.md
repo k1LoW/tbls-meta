@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.4.0](https://github.com/k1LoW/tbls-meta/compare/v0.3.3...v0.4.0) - 2025-04-15
+### Other Changes
+- Bump golang.org/x/crypto from 0.14.0 to 0.17.0 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/21
+- Bump github.com/dvsekhvalnov/jose2go from 1.5.0 to 1.6.0 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/23
+- Bump google.golang.org/protobuf from 1.30.0 to 1.33.0 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/24
+- Bump golang.org/x/net from 0.17.0 to 0.23.0 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/25
+- Bump golang.org/x/crypto from 0.21.0 to 0.31.0 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/26
+- chore: update pkgs by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/29
+
 ## [v0.3.3](https://github.com/k1LoW/tbls-meta/compare/v0.3.2...v0.3.3) - 2023-10-26
 ### Other Changes
 - Bump google.golang.org/grpc from 1.55.0 to 1.56.3 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/19
