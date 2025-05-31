@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.4.2](https://github.com/k1LoW/tbls-meta/compare/v0.4.1...v0.4.2) - 2025-05-31
+### Other Changes
+- Bump github.com/cli/go-gh/v2 from 2.12.0 to 2.12.1 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/32
+
 ## [v0.4.1](https://github.com/k1LoW/tbls-meta/compare/v0.4.0...v0.4.1) - 2025-04-29
 ### Other Changes
 - Bump github.com/snowflakedb/gosnowflake from 1.13.2 to 1.13.3 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/30
