@@ -51,7 +51,7 @@ require (
 	github.com/bradleyfalzon/ghinstallation/v2 v2.14.0 // indirect
 	github.com/buildkite/interpolate v0.1.5 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
-	github.com/cli/go-gh/v2 v2.12.0 // indirect
+	github.com/cli/go-gh/v2 v2.12.1 // indirect
 	github.com/cli/safeexec v1.0.1 // indirect
 	github.com/cncf/xds/go v0.0.0-20250326154945-ae57f3c0d45f // indirect
 	github.com/danieljoos/wincred v1.2.2 // indirect
