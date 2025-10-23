@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.4.3](https://github.com/k1LoW/tbls-meta/compare/v0.4.2...v0.4.3) - 2025-10-23
+### Other Changes
+- chore: setup tagpr labels by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/34
+
 ## [v0.4.2](https://github.com/k1LoW/tbls-meta/compare/v0.4.1...v0.4.2) - 2025-05-31
 ### Other Changes
 - Bump github.com/cli/go-gh/v2 from 2.12.0 to 2.12.1 by @dependabot in https://github.com/k1LoW/tbls-meta/pull/32
