@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.4.4](https://github.com/k1LoW/tbls-meta/compare/v0.4.3...v0.4.4) - 2025-12-17
+### Other Changes
+- Bump github.com/expr-lang/expr from 1.17.2 to 1.17.7 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/37
+
 ## [v0.4.3](https://github.com/k1LoW/tbls-meta/compare/v0.4.2...v0.4.3) - 2025-11-20
 ### Other Changes
 - chore: setup tagpr labels by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/34
