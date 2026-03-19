@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.4.6](https://github.com/k1LoW/tbls-meta/compare/v0.4.5...v0.4.6) - 2026-03-19
+
 ## [v0.4.5](https://github.com/k1LoW/tbls-meta/compare/v0.4.4...v0.4.5) - 2026-03-01
 ### Other Changes
 - Bump go.opentelemetry.io/otel/sdk from 1.35.0 to 1.40.0 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/39
