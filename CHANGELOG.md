@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.4.7](https://github.com/k1LoW/tbls-meta/compare/v0.4.6...v0.4.7) - 2026-04-03
+### Other Changes
+- Bump github.com/go-jose/go-jose/v4 from 4.1.3 to 4.1.4 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/43
+
 ## [v0.4.6](https://github.com/k1LoW/tbls-meta/compare/v0.4.5...v0.4.6) - 2026-03-19
 
 ## [v0.4.5](https://github.com/k1LoW/tbls-meta/compare/v0.4.4...v0.4.5) - 2026-03-01
