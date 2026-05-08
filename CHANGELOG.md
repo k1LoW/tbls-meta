@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.4.9](https://github.com/k1LoW/tbls-meta/compare/v0.4.8...v0.4.9) - 2026-05-08
+### Other Changes
+- chore(deps): bump github.com/apache/thrift from 0.22.0 to 0.23.0 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/49
+
 ## [v0.4.8](https://github.com/k1LoW/tbls-meta/compare/v0.4.7...v0.4.8) - 2026-04-08
 ### Other Changes
 - Bump github.com/aws/aws-sdk-go-v2/service/s3 from 1.97.1 to 1.97.3 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/46
