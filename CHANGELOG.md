@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.4.10](https://github.com/k1LoW/tbls-meta/compare/v0.4.9...v0.4.10) - 2026-07-11
+
+### Other Changes
+- chore(deps): bump golang.org/x/crypto from 0.51.0 to 0.52.0 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/52
+
 ## [v0.4.9](https://github.com/k1LoW/tbls-meta/compare/v0.4.8...v0.4.9) - 2026-07-04
 
 ### Other Changes
