@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.4.11](https://github.com/k1LoW/tbls-meta/compare/v0.4.10...v0.4.11) - 2026-07-26
+
+### Other Changes
+- chore(deps): bump google.golang.org/grpc from 1.79.3 to 1.82.1 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/54
+
 ## [v0.4.10](https://github.com/k1LoW/tbls-meta/compare/v0.4.9...v0.4.10) - 2026-07-11
 
 ### Other Changes
