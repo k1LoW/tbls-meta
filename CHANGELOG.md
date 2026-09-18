@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.4.11](https://github.com/k1LoW/tbls-meta/compare/v0.4.10...v0.4.11) - 2026-09-18
+
+### Other Changes
+- chore(deps): bump google.golang.org/grpc from 1.79.3 to 1.82.1 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/54
+- chore(deps): bump go.opentelemetry.io/otel/sdk from 1.43.0 to 1.45.0 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/58
+- chore(deps): bump google.golang.org/grpc from 1.82.1 to 1.83.2 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/56
+- chore(deps): bump github.com/apache/thrift from 0.23.0 to 0.24.0 by @dependabot[bot] in https://github.com/k1LoW/tbls-meta/pull/57
+
 ## [v0.4.10](https://github.com/k1LoW/tbls-meta/compare/v0.4.9...v0.4.10) - 2026-07-11
 
 ### Other Changes
