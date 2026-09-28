@@ -1,5 +1,10 @@
 # Changelog
 
+## [v0.4.12](https://github.com/k1LoW/tbls-meta/compare/v0.4.11...v0.4.12) - 2026-09-28
+
+### Other Changes
+- ci: generate CREDITS with gocredits v1.0.0 from a make target by @k1LoW in https://github.com/k1LoW/tbls-meta/pull/59
+
 ## [v0.4.11](https://github.com/k1LoW/tbls-meta/compare/v0.4.10...v0.4.11) - 2026-09-18
 
 ### Other Changes
